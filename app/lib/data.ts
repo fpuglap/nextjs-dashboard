@@ -155,7 +155,7 @@ export async function fetchInvoicesPages(query: string) {
   }
 }
 
-export async function fetchInvoiceById(id: string) {
+export async function fetchInvoiceById(id: string): Promise<InvoiceForm> {
   noStore();
 
   try {
@@ -175,9 +175,14 @@ export async function fetchInvoiceById(id: string) {
       amount: invoice.amount / 100,
     }));
 
-    return invoice[0];
+    if (invoice.length > 0) {
+      return invoice[0];
+    } else {
+      throw new Error('Invoice not found'); // O devuelve un valor por defecto según tus necesidades
+    }
   } catch (error) {
     console.error('Database Error:', error);
+    throw new Error('Error fetching invoice by id');
   }
 }
 

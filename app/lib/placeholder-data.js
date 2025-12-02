@@ -5,8 +5,7 @@ const users = [
     id: '410544b2-4001-4271-9855-fec4b6a6442a',
     name: 'User',
     email: 'user@nextmail.com',
-    // openssl rand -base64 32
-    password: '123458DLIsNObl5oU31egHZ5O+w6peS7pz30bZiZBHIDNmpM=6',
+    password: '123456',
   },
 ];
 

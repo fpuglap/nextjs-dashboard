@@ -8,34 +8,32 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.18",
-    "@tailwindcss/forms": "^0.5.6",
-    "@types/node": "20.5.7",
-    "@vercel/analytics": "^1.1.1",
-    "@vercel/postgres": "^0.5.1",
-    "autoprefixer": "10.4.15",
+    "@heroicons/react": "^2.2.0",
+    "@tailwindcss/forms": "^0.5.10",
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/postgres": "^0.10.0",
+    "autoprefixer": "^10.4.22",
     "bcrypt": "^5.1.1",
-    "clsx": "^2.0.0",
-    "next": "^14.0.0",
-    "next-auth": "^5.0.0-beta.3",
-    "postcss": "8.4.31",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.2.2",
-    "use-debounce": "^9.0.4",
-    "zod": "^3.22.4"
+    "clsx": "^2.1.1",
+    "next": "^16.0.6",
+    "next-auth": "^5.0.0-beta.30",
+    "postcss": "^8.5.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.1.17",
+    "use-debounce": "^10.0.6",
+    "zod": "^4.1.13"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
     "@types/bcrypt": "^5.0.1",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.14",
-    "dotenv": "^16.3.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "dotenv": "^17.2.3",
     "eslint": "^8.52.0",
-    "eslint-config-next": "^14.0.0",
-    "prettier": "^3.0.3"
-  },
-  "engines": {
-    "node": ">=18"
+    "eslint-config-next": "^16.0.6",
+    "prettier": "^3.7.3",
+    "typescript": "^5.9.3"
   }
 }

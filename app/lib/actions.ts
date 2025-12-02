@@ -9,25 +9,24 @@ import { signIn } from '@/auth';
 const InvoiceSchema = z.object({
   id: z.string(),
   customerId: z.string({
-    invalid_type_error: 'Please select a customer.',
+    error: 'Please select a customer.',
   }),
   amount: z.coerce
     .number()
     .gt(0, { message: 'Please enter an amount greater than $0.' }),
   status: z.enum(['pending', 'paid'], {
-    invalid_type_error: 'Please select an invoice status.',
+    error: 'Please select an invoice status.',
   }),
   date: z.string(),
 });
 
-// This is temporary until @types/react-dom is updated
 export type State = {
   errors?: {
     customerId?: string[];
     amount?: string[];
     status?: string[];
   };
-  message?: string | null;
+  message?: string;
 };
 
 const CreateInvoice = InvoiceSchema.omit({ id: true, date: true });
@@ -108,9 +107,9 @@ export async function deleteInvoice(id: string) {
   try {
     await sql`DELETE FROM invoices WHERE id = ${id}`;
     revalidatePath('/dashboard/invoices');
-    return { message: 'Deleted Invoice.' };
   } catch (error) {
-    return { message: 'Database Error: Failed to Delete Invoice.' };
+    console.error('Database Error: Failed to Delete Invoice.', error);
+    throw new Error('Failed to delete invoice');
   }
 }
 

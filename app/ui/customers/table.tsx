@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { lusitana } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
-import { CustomersTable, FormattedCustomersTable } from '@/app/lib/definitions';
+import { FormattedCustomersTable } from '@/app/lib/definitions';
 
-export default async function CustomersTable({
+export default async function CustomersTableComponent({
   customers,
 }: {
   customers: FormattedCustomersTable[];
